@@ -1,10 +1,9 @@
-import React, {useEffect, useRef} from "react";
-import Header from "../components/Header";
+import React from "react";
+
 import Banner from "../components/Banner";
 import Awesome from "../components/Awesome";
-import BestSeller from "../components/BestSeller";
-import Footer from "../components/Footer";
-import $ from 'jquery';
+import BestSeller from "../components/TopRatedProducts";
+
 
 
 

@@ -1,38 +1,42 @@
-import React, { useContext, useState, useEffect } from "react";
-import { ProductsContext } from "../contexts/ProductContext";
+import React, { useContext, useEffect, useState } from "react";
+
 import Product from "./Product";
+import { ProductsContext } from "../contexts/ProductContext";
 
-function Awesome() {
+function TopRatedProducts() {
+
+  
   const { products, loading, error } = useContext(ProductsContext);
-
+  
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
-  const [newArrivals, setNewArrivals] = useState([]);
+  const [topRatedProducts, setTopRatedProducts] = useState([]);
   useEffect(() => {
-    const newProducts = products.toSpliced(0, 16);
-    setNewArrivals(newProducts);
+    const topRated = products
+      .toSorted((a, b) => {
+        return b.rating.rate - a.rating.rate;
+      })
+      .toSpliced(4,20);
+    setTopRatedProducts(topRated);
   }, [products]);
-
   return (
     <>
-      <section className="product_list section_padding">
+      <section className="product_list best_seller">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-12">
               <div className="section_tittle text-center">
                 <h2>
-                  awesome <span>shop</span>
+                  Top Rated Products <span>shop</span>
                 </h2>
               </div>
             </div>
           </div>
-          <div className="row">
+          <div className="row align-items-center justify-content-between">
             <div className="col-lg-12">
-              <div className="">
-                <div className="">
-                  <div className="row d-flex align-items-center justify-content-between">
-                    {newArrivals &&
-                      newArrivals.map((item) => (
+              <div className="d-flex">
+              {topRatedProducts &&
+                      topRatedProducts.map((item) => (
                         <div className="col-lg-3 col-sm-6">
                           <Product
                             id={item.id}
@@ -45,9 +49,9 @@ function Awesome() {
                           />
                         </div>
                       ))}
-                  </div>
-                </div>
+                
               </div>
+              
             </div>
           </div>
         </div>
@@ -56,4 +60,4 @@ function Awesome() {
   );
 }
 
-export default Awesome;
+export default TopRatedProducts;

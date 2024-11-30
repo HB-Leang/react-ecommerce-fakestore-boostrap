@@ -102,8 +102,8 @@ function Footer() {
                       id="newsletter-form-email"
                       placeholder="Email Address"
                       className="placeholder hide-on-focus"
-                      onfocus="this.placeholder = ''"
-                      onblur="this.placeholder = ' Email Address '"
+                      onFocus="this.placeholder = ''"
+                      onBlur="this.placeholder = ' Email Address '"
                     />
                     <button
                       type="submit"

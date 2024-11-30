@@ -19,10 +19,11 @@ function Header() {
           <div className="row align-items-center">
             <div className="col-lg-12">
               <nav className="navbar navbar-expand-lg navbar-light">
-                <a className="navbar-brand" href="index.html">
+                <Link to="/" className="navbar-brand">
                   {" "}
                   <img src={logo} alt="logo" />{" "}
-                </a>
+                </Link>
+
                 <button
                   className="navbar-toggler"
                   type="button"
@@ -42,10 +43,14 @@ function Header() {
                 >
                   <ul className="navbar-nav">
                     <li className="nav-item">
-                    <Link to="/" className="nav-link">Home</Link>
+                      <Link to="/" className="nav-link">
+                        Home
+                      </Link>
                     </li>
                     <li className="nav-item">
-                      <Link to="/shop" className="nav-link">Shop</Link>
+                      <Link to="/shop" className="nav-link">
+                        Shop
+                      </Link>
                       {/* <a
                         className="nav-link dropdown-toggle"
                         href="blog.html"
@@ -57,7 +62,6 @@ function Header() {
                       >
                         Shop
                       </a> */}
-                      
                     </li>
                     <li className="nav-item dropdown">
                       <a

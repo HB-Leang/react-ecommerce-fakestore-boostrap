@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ProductsContext } from "../contexts/ProductContext";
 import Product from "./Product";
 import Image from "./designLayouts/Image";
-
+import { banner2 } from "../assets/index";
 function Items({ currentItems }) {
   return (
     <>
@@ -34,7 +34,7 @@ function ProductsDisplay() {
   return (
     <>
       {/* breadcrumb start*/}
-      <section className="breadcrumb breadcrumb_bg">
+      <section className="breadcrumb breadcrumb_bg" style={{backgroundImage: `url(${banner2})`,}}>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8">
