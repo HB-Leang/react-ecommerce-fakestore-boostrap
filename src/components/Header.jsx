@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { logo } from "../assets/index";
+import { CartContext } from "../contexts/CartContext";
+
 function Header() {
   const [isSearchVisible, setSearchVisible] = useState(false); // State to manage visibility of the search input
-
+  const {cart} = useContext(CartContext);
   const toggleSearch = () => {
     setSearchVisible((prevState) => !prevState); // Toggle visibility
   };
@@ -51,17 +53,7 @@ function Header() {
                       <Link to="/shop" className="nav-link">
                         Shop
                       </Link>
-                      {/* <a
-                        className="nav-link dropdown-toggle"
-                        href="blog.html"
-                        id="navbarDropdown_1"
-                        role="button"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        Shop
-                      </a> */}
+                      
                     </li>
                     <li className="nav-item dropdown">
                       <a
@@ -139,25 +131,32 @@ function Header() {
                   <a href="true">
                     <i className="ti-heart" />
                   </a>
-                  <Link to="/cart" id="navbarDropdown3" ><i className="fas fa-cart-plus" /></Link>
-                  {/* <div className="dropdown cart">
-                    <a
-                      className="dropdown-toggle"
-                      href="true"
-                      id="navbarDropdown3"
-                      role="button"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
+
+                  <Link to="/cart" id="navbarDropdown3">
+                    <i
+                      className="fas fa-cart-plus"
+                      style={{ position: "relative" }}
+                    />
+                    <span
+                      style={{
+                        zIndex : "999",
+                        position: "absolute",
+                        top: "24px",
+                        right: "-8px",
+                        borderRadius: "50%",
+                        backgroundColor: "#f13d80",
+                        width: "14px",
+                        height: "14px",
+                        lineHeight : "15px", 
+                        fontSize:"10px",
+                        textAlign:"center",
+                        color:"#fff"
+                      }}
                     >
-                      <i className="fas fa-cart-plus" />
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <div class="single_product">
-    
-                              </div>
-                          </div>
-                  </div> */}
+                      {cart.length}
+                    </span>
+                  </Link>
+                 
                 </div>
               </nav>
             </div>
