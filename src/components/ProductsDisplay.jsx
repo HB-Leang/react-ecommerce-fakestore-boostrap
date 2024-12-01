@@ -27,7 +27,7 @@ function Items({ currentItems }) {
 
 function ProductsDisplay() {
     const { products, loading, error } = useContext(ProductsContext);
-  
+    
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 

@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Image from "../components/designLayouts/Image";
-
+import { CartContext } from "../contexts/CartProvider";
 function ProductDetail() {
+
   const location = useLocation();
   const [productInfo, setProductInfo] = useState([]);
   useEffect(() => {
     setProductInfo(location.state.item);
   }, [location, productInfo]);
 
+  const {cart, addToCart} = useContext(CartContext);
   return (
     <>
       {/*================Single Product Area =================*/}
@@ -59,9 +61,19 @@ function ProductDetail() {
                       <i className="ti-plus" />
                     </span>
                   </div>
-                  <a href="#" className="btn_3">
-                    add to cart
-                  </a>
+                  <div className="btn_3" onClick={()=> addToCart({
+                    id : productInfo.id,
+                    image : productInfo.image,
+                    title: productInfo.title,
+                    price : productInfo.price,
+                    description : productInfo.description,
+                    category : productInfo.category,
+                  })}>
+                  add to cart
+                  </div>
+                  {/* <a href="#" className="btn_3">
+                    
+                  </a> */}
                   <a href="#" className="like_us">
                     {" "}
                     <i className="ti-heart" />{" "}

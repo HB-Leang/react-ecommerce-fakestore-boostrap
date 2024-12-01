@@ -6,6 +6,7 @@ import Shop from "./pages/Shop";
 import ProductDetail from "./pages/ProductDetail";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Cart from "./pages/Cart";
 
 function App() {
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/shop/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart/>}/>
           {/* <Route path="/about" element={<About />} /> */}
         </Routes>
         <Footer />

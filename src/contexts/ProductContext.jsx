@@ -18,11 +18,12 @@ export const ProductsProvider = ({ children }) => {
         
         const data = await response.json();
         setProducts(data); 
-        console.log("product", products)
+        
       } catch (error) {
         setError(error.message);
       } finally {
         setLoading(false);
+        console.log("product", products)
       }
     };
 

@@ -139,7 +139,8 @@ function Header() {
                   <a href="true">
                     <i className="ti-heart" />
                   </a>
-                  <div className="dropdown cart">
+                  <Link to="/cart" id="navbarDropdown3" ><i className="fas fa-cart-plus" /></Link>
+                  {/* <div className="dropdown cart">
                     <a
                       className="dropdown-toggle"
                       href="true"
@@ -151,12 +152,12 @@ function Header() {
                     >
                       <i className="fas fa-cart-plus" />
                     </a>
-                    {/* <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                               <div class="single_product">
     
                               </div>
-                          </div> */}
-                  </div>
+                          </div>
+                  </div> */}
                 </div>
               </nav>
             </div>
