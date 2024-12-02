@@ -44,8 +44,11 @@ export const CartProvider = ({ children }) => {
         .filter((item) => item.quantity > 0) // Remove items with quantity 0
     );
   };
-  const getTotalPrice = () => {
+  const getSubTotal = () => {
     return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+  const clearCart = () =>{
+    setCart([]);
   };
     // const increment = (id) =>{
     //   const item = cart.find((item) => item.it === id);
@@ -65,7 +68,7 @@ export const CartProvider = ({ children }) => {
 
   // Return the context provider with products, loading, and error states
   return (
-    <CartContext.Provider value={{ cart, addToCart, increment, decrement}}>
+    <CartContext.Provider value={{ cart, addToCart, increment, decrement, getSubTotal, clearCart}}>
       {children}
     </CartContext.Provider>
   );

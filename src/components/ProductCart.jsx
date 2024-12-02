@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import CartItem from "./CartItem";
 import { CartContext } from "../contexts/CartContext";
+import { Link } from "react-router-dom";
 
 function ProductCart() {
-  const { cart } = useContext(CartContext);
+  const { cart, getSubTotal } = useContext(CartContext);
 
   return (
     <>
@@ -31,18 +32,27 @@ function ProductCart() {
                       <td colSpan={"4"}>Cart is empty.</td>
                     </tr>
                   )}
-
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <h5>Subtotal</h5>
+                    </td>
+                    <td>
+                      <h5>${getSubTotal().toFixed(2)}</h5>
+                    </td>
+                  </tr>
                   {/* <CartItem/>
             <CartItem/> */}
                 </tbody>
               </table>
               <div className="checkout_btn_inner float-right">
-                <a className="btn_1" href="#">
+                <Link to="/shop" className="btn_1 mr-4">
                   Continue Shopping
-                </a>
-                <a className="btn_1 checkout_btn_1" href="#">
+                </Link>
+                <Link to="/checkout" className="btn_1 checkout_btn_1">
                   Proceed to checkout
-                </a>
+                </Link>
               </div>
             </div>
           </div>

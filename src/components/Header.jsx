@@ -5,7 +5,7 @@ import { CartContext } from "../contexts/CartContext";
 
 function Header() {
   const [isSearchVisible, setSearchVisible] = useState(false); // State to manage visibility of the search input
-  const {cart} = useContext(CartContext);
+  const { cart } = useContext(CartContext);
   const toggleSearch = () => {
     setSearchVisible((prevState) => !prevState); // Toggle visibility
   };
@@ -53,74 +53,12 @@ function Header() {
                       <Link to="/shop" className="nav-link">
                         Shop
                       </Link>
-                      
                     </li>
-                    <li className="nav-item dropdown">
-                      <a
-                        className="nav-link dropdown-toggle"
-                        href="blog.html"
-                        id="navbarDropdown_3"
-                        role="button"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        pages
-                      </a>
-                      <div
-                        className="dropdown-menu"
-                        aria-labelledby="navbarDropdown_2"
-                      >
-                        <a className="dropdown-item" href="login.html">
-                          {" "}
-                          login
-                        </a>
-                        <a className="dropdown-item" href="tracking.html">
-                          tracking
-                        </a>
-                        <a className="dropdown-item" href="checkout.html">
-                          product checkout
-                        </a>
-                        <a className="dropdown-item" href="cart.html">
-                          shopping cart
-                        </a>
-                        <a className="dropdown-item" href="confirmation.html">
-                          confirmation
-                        </a>
-                        <a className="dropdown-item" href="elements.html">
-                          elements
-                        </a>
-                      </div>
-                    </li>
-                    <li className="nav-item dropdown">
-                      <a
-                        className="nav-link dropdown-toggle"
-                        href="blog.html"
-                        id="navbarDropdown_2"
-                        role="button"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        blog
-                      </a>
-                      <div
-                        className="dropdown-menu"
-                        aria-labelledby="navbarDropdown_2"
-                      >
-                        <a className="dropdown-item" href="blog.html">
-                          {" "}
-                          blog
-                        </a>
-                        <a className="dropdown-item" href="single-blog.html">
-                          Single blog
-                        </a>
-                      </div>
-                    </li>
+
                     <li className="nav-item">
-                      <a className="nav-link" href="contact.html">
+                      <Link to="/contact" className="nav-link">
                         Contact
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -128,9 +66,7 @@ function Header() {
                   <a id="search_1" href="#">
                     <i className="ti-search" />
                   </a>
-                  <a href="true">
-                    <i className="ti-heart" />
-                  </a>
+                  
 
                   <Link to="/cart" id="navbarDropdown3">
                     <i
@@ -139,7 +75,7 @@ function Header() {
                     />
                     <span
                       style={{
-                        zIndex : "999",
+                        zIndex: "999",
                         position: "absolute",
                         top: "24px",
                         right: "-8px",
@@ -147,16 +83,15 @@ function Header() {
                         backgroundColor: "#f13d80",
                         width: "14px",
                         height: "14px",
-                        lineHeight : "15px", 
-                        fontSize:"10px",
-                        textAlign:"center",
-                        color:"#fff"
+                        lineHeight: "15px",
+                        fontSize: "10px",
+                        textAlign: "center",
+                        color: "#fff",
                       }}
                     >
                       {cart.length}
                     </span>
                   </Link>
-                 
                 </div>
               </nav>
             </div>

@@ -43,24 +43,8 @@ function ProductDetail() {
                 <p className="text-justify">
                   {productInfo.description}
                 </p>
-                <div className="card_area d-flex justify-content-between align-items-center">
-                  <div className="product_count">
-                    <span className="inumber-decrement">
-                      {" "}
-                      <i className="ti-minus" />
-                    </span>
-                    <input
-                      className="input-number"
-                      type="text"
-                      defaultValue={1}
-                      min={0}
-                      max={10}
-                    />
-                    <span className="number-increment">
-                      {" "}
-                      <i className="ti-plus" />
-                    </span>
-                  </div>
+                <div className="card_area d-flex justify-content-center align-items-center">
+                 
                   <div className="btn_3" onClick={()=> addToCart({
                     id : productInfo.id,
                     image : productInfo.image,
@@ -71,13 +55,8 @@ function ProductDetail() {
                   })}>
                   add to cart
                   </div>
-                  {/* <a href="#" className="btn_3">
-                    
-                  </a> */}
-                  <a href="#" className="like_us">
-                    {" "}
-                    <i className="ti-heart" />{" "}
-                  </a>
+                  
+                  
                 </div>
               </div>
             </div>

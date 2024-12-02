@@ -1,6 +1,7 @@
 import React from "react";
 import { banner1 } from "../assets/index";
 import Image from "./designLayouts/Image";
+import { Link } from "react-router-dom";
 
 function Banner() {
   return (
@@ -15,25 +16,24 @@ function Banner() {
                     <div className="col-lg-5 col-md-8">
                       <div className="banner_text">
                         <div className="banner_text_iner">
-                          <h1>Wood &amp; Cloth Sofa</h1>
+                          <h1>Special Promotion</h1>
                           <p>
-                            Incididunt ut labore et dolore magna aliqua quis
-                            ipsum suspendisse ultrices gravida. Risus commodo
-                            viverra
+                            Don’t miss our Black Friday sale! Get up to 50% off
+                            on all products. Shop now and save big while
+                            supplies last!
                           </p>
-                          <a href="#" className="btn_2">
+                          <Link to='/shop' className = "btn_2">
                             buy now
-                          </a>
+                          </Link>
+                          
                         </div>
                       </div>
                     </div>
                     <div className="banner_img d-none d-lg-block">
-                    <Image imgSrc={banner1}/>
+                      <Image imgSrc={banner1} />
                     </div>
                   </div>
                 </div>
-                
-                
               </div>
               {/* <div className="slider-counter" /> */}
             </div>
